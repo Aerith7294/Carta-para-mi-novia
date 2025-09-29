@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Carta para Nancy</title>
+</head>
+<body>
+    <h1>❤️ ¡Felices 6 meses mi amor! ❤️</h1>
+    <p style="font-family: 'Marck Script'cursive; font-size: 24px; text-align: center;">
+    ✨ Solo abrir dentro de... ✨
+</p>
+<div id="countdown" style="font-family: 'Marck Script'curs; font-size: 28px; text-align: center; margin-bottom: 20px;"></div>
+    <div class="container">
+        <div class="envelope-wrapper ">
+            <div class="envelope">
+                <div class="letter">
+                    <div class="text">
+                        <strong>Para Nancy, mi regalo de Dios</strong>
+                        <p>
+                            Hoy celebramos 6 meses juntos y quiero decirte lo agradecido que estoy por tu vida. Sé lo mucho que trabajás y estudiás, y admiro tu esfuerzo y dedicación. Aunque a veces el cansancio te pese, quiero recordarte que no estás sola: Dios camina contigo, y yo también. 
+                            <p>Pienso en la historia de Jacob, que trabajó muchos años por el amor de Raquel, y me recuerda que el verdadero amor es paciente y persevera en medio de las pruebas. Así también quiero amarte: con paciencia, fe y entrega.</p>
+                            <p>Oro para que Él te dé fuerzas en tus estudios, paz en tus momentos difíciles, y alegría en cada paso que des. Yo te acompaño en este camino, con todo mi amor.</p>
+<p><strong>Te amo, y en Cristo sé que lo nuestro florecerá aún más.</strong></p>
+<p>Atentamente:<strong>Tu novio, Nahuel</strong></p>
+                        </p>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="heart"></div>
+            <div class="tap-right"></div>
+            <div class="tap-left"></div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+    <script>
+    // Cambiá la fecha al momento exacto
+    const targetDate = new Date("Sep 30, 2025 00:00:00").getTime();
+
+    const countdown = setInterval(function() {
+        const now = new Date().getTime();
+        const distance = targetDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("countdown").innerHTML =
+            days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+        // Cuando llega a 0 muestra la carta
+        if (distance < 0) {
+            clearInterval(countdown);
+            document.getElementById("countdown").innerHTML =
+                "💖 ¡Ya podés abrir tu regalo, mi amor! 💖";
+            document.getElementById("carta").style.display = "block";
+        }
+    }, 1000);
+</script>
+</body>
+</html>
